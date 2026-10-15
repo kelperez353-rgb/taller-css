@@ -1,0 +1,229 @@
+/* =====================================================
+   Taller CSS - Software Educativo (EducAr)
+   Universidad de Panamá - Tecnología Web I
+   ===================================================== */
+
+/* ---------- General ---------- */
+body {
+    margin: 0;
+    padding: 6px;                      /* pequeño margen alrededor de la página */
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Todos los títulos usan la fuente de Google Fonts "Knewave" */
+h1 {
+    font-family: 'Knewave', cursive;
+    font-weight: 400;
+}
+
+/* ---------- 1. ENCABEZADO (con relleno) ---------- */
+header {
+    background-color: #9bc4cd;
+    padding: 30px 20px;                /* RELLENO interno del encabezado */
+    margin-bottom: 20px;               /* 2. SEPARACIÓN entre encabezado y menú */
+    display: flex;                     /* coloca logo - título - logo en una fila */
+    align-items: center;
+    justify-content: space-around;
+}
+header h1 {
+    order: 2;                          /* el título va en el centro */
+    margin: 0;
+    font-family: 'Sriracha', cursive;  /* 9. FORMATO de texto */
+    font-size: 48px;
+    font-weight: 400;
+}
+#logo1 { order: 1; }
+#logo2 { order: 3; }
+#logo1, #logo2 {
+    font-family: 'Knewave', cursive;
+    font-size: 42px;
+}
+
+/* ---------- 3 y 4. MENÚ DE OPCIONES ---------- */
+nav ul {
+    display: flex;                     /* botones en una sola fila */
+    list-style: none;                  /* quita las viñetas */
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    flex: 1;                           /* los 5 botones ocupan el mismo ancho */
+    text-decoration: none;             /* quita el subrayado del enlace */
+    margin: 0 2px;                     /* 4. SEPARACIÓN entre botones */
+}
+.botones {
+    background-color: #3b87a0;
+    color: white;
+    text-align: center;
+    padding: 16px 10px;                /* 3. RELLENO del botón */
+    font-family: 'Knewave', cursive;
+    font-style: italic;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+/* 5. Resalta la opción al pasar el mouse */
+.botones:hover {
+    background-color: #5fb0c9;
+    cursor: pointer;
+}
+/* 6. Efecto al hacer clic */
+.botones:active {
+    background-color: #1f5568;
+    transform: scale(0.96);
+}
+
+/* ---------- 7 y 8. SECCIÓN SUPERIOR EN 3 COLUMNAS ---------- */
+#top ul {
+    display: flex;                     /* 3 columnas */
+    list-style: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+#top li {
+    flex: 1;                           /* columnas de igual ancho */
+    text-align: center;
+    padding: 0 20px;
+}
+#top img {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 50%;                /* 8. IMAGEN EN CÍRCULO */
+}
+#top h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+#top p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ---------- SECCIÓN PRINCIPAL (3 columnas: menú / contenido / login) ---------- */
+section {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+/* ---------- 10 al 13. MENÚ LATERAL ---------- */
+#izq {
+    width: 20%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+#izq ul {
+    list-style-type: square;           /* 11. Viñeta cuadrada */
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+#izq li {
+    background-color: #a8a8a8;
+    padding: 12px 10px;                /* 12. RELLENO */
+    margin-bottom: 3px;                /* 12. SEPARACIÓN entre opciones */
+}
+#izq a {
+    text-decoration: none;             /* 13. Quita el subrayado del enlace */
+}
+#izq u {
+    text-decoration: none;             /* ...y el de la etiqueta <u> que está dentro */
+}
+
+/* ---------- 14. CONTENIDO CENTRAL ---------- */
+article {
+    width: 58%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+article h1 {
+    text-align: center;
+    font-size: 44px;
+    margin: 0 0 10px 0;
+}
+article img {
+    float: left;                       /* el texto rodea la imagen */
+    margin: 0 20px 10px 0;
+}
+article p {
+    text-align: justify;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* ---------- 15, 16 y 17. FORMULARIO DE INICIO DE SESIÓN ---------- */
+#der {
+    width: 20%;
+    box-sizing: border-box;
+}
+/* 16. Estilo SUPERIOR del formulario (título) */
+#der h1 {
+    background-color: #67731f;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+    padding: 12px 0;
+}
+form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 14px 50px 14px 12px;
+    font-size: 15px;
+}
+input[type="text"],
+input[type="password"] {
+    border: 2px solid black;
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    background-size: 36px;
+}
+input[type="text"]     { background-image: url('user_image.png'); }
+input[type="password"] { background-image: url('password_image.png'); }
+
+/* 15. Estilo al campo con el FOCO */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #3b87a0;
+    background-color: #eaf5f8;
+    box-shadow: 0 0 6px #3b87a0;
+}
+/* 17. Estilo INFERIOR del formulario (botón) */
+input[type="submit"] {
+    background-color: #a9bfa8;
+    border: 1px solid #888;
+    padding: 14px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #8fae8e;
+}
+
+/* ---------- 18 y 19. PIE DE PÁGINA + REDES SOCIALES ---------- */
+footer {
+    background-color: #3b87a0;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+footer p {
+    margin: 0 0 8px 0;
+}
+.redes a {
+    color: white;
+    font-size: 22px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.redes a:hover {
+    color: #ffd966;
+}
